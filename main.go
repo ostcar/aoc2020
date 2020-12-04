@@ -10,6 +10,7 @@ import (
 	"github.com/ostcar/aoc2020/d1"
 	"github.com/ostcar/aoc2020/d2"
 	"github.com/ostcar/aoc2020/d3"
+	"github.com/ostcar/aoc2020/d4"
 )
 
 func input(day string) (io.ReadCloser, error) {
@@ -28,6 +29,8 @@ func assignment(name string) (input string, fn func(string) (string, error), err
 		"d2b": d2.D2b,
 		"d3a": d3.D3a,
 		"d3b": d3.D3b,
+		"d4a": d4.D4a,
+		"d4b": d4.D4b,
 	}
 
 	fn, ok := assignments[name]
