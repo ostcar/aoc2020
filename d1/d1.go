@@ -24,7 +24,7 @@ func parseSlice(input string) ([]int, error) {
 }
 
 // D1a solves day1 a
-func D1a(input string) (string, error) {
+func D1a(input string) string {
 	lines := strings.Split(input, "\n")
 	m := make(map[int]bool, len(lines))
 	nums := make([]int, 0, len(lines))
@@ -35,7 +35,7 @@ func D1a(input string) (string, error) {
 
 		i, err := strconv.Atoi(line)
 		if err != nil {
-			return "", fmt.Errorf("invalid input `%s`: %w", line, err)
+			return fmt.Sprintf("Invalid input `%s`: %v", line, err)
 		}
 
 		if i < 1010 {
@@ -47,18 +47,18 @@ func D1a(input string) (string, error) {
 
 	for _, num := range nums {
 		if m[2020-num] {
-			return strconv.Itoa(num * (2020 - num)), nil
+			return strconv.Itoa(num * (2020 - num))
 		}
 	}
 
-	return "", fmt.Errorf("no correct values :(")
+	return fmt.Sprintf("No correct values :(")
 }
 
 // D1b solves day1 b
-func D1b(input string) (string, error) {
+func D1b(input string) string {
 	nums, err := parseSlice(input)
 	if err != nil {
-		return "", fmt.Errorf("can not load input: %w", err)
+		return fmt.Sprintf("Can not load input: %v", err)
 	}
 
 	sort.Ints(nums)
@@ -77,10 +77,10 @@ func D1b(input string) (string, error) {
 				if nums[i]+nums[j]+nums[k] != 2020 {
 					continue
 				}
-				return strconv.Itoa(nums[i] * nums[j] * nums[k]), nil
+				return strconv.Itoa(nums[i] * nums[j] * nums[k])
 			}
 
 		}
 	}
-	return "", fmt.Errorf("no correct values :(")
+	return fmt.Sprintf("No correct values :(")
 }

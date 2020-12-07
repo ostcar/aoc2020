@@ -15,8 +15,8 @@ import (
 	"github.com/ostcar/aoc2020/d7"
 )
 
-func assignment(name string) (input string, fn func(string) (string, error), err error) {
-	assignments := map[string]func(string) (string, error){
+func assignment(name string) (input string, fn func(string) string, err error) {
+	assignments := map[string]func(string) string{
 		"d1a": d1.D1a,
 		"d1b": d1.D1b,
 		"d2a": d2.D2a,
@@ -65,7 +65,7 @@ func main() {
 		log.Fatalf("Can not get assignment: %v", err)
 	}
 
-	result, err := fn(input)
+	result := fn(input)
 	if err != nil {
 		log.Fatalf("Can not solve %s: %v", os.Args[1], err)
 	}

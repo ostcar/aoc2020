@@ -29,10 +29,10 @@ func parseInput(input string) ([]entry, error) {
 }
 
 // D2a solves day2 a.
-func D2a(input string) (string, error) {
+func D2a(input string) string {
 	entries, err := parseInput(input)
 	if err != nil {
-		return "", fmt.Errorf("parsing d2 input: %w", err)
+		return fmt.Sprintf("Can not parse input: %v", err)
 	}
 
 	var valid int
@@ -43,14 +43,14 @@ func D2a(input string) (string, error) {
 		}
 		valid++
 	}
-	return strconv.Itoa(valid), nil
+	return strconv.Itoa(valid)
 }
 
 // D2b solves day2 b.
-func D2b(input string) (string, error) {
+func D2b(input string) string {
 	entries, err := parseInput(input)
 	if err != nil {
-		return "", fmt.Errorf("parsing d2 input: %w", err)
+		return fmt.Sprintf("Can not parse input: %v", err)
 	}
 
 	var valid int
@@ -65,5 +65,5 @@ func D2b(input string) (string, error) {
 		}
 		valid++
 	}
-	return strconv.Itoa(valid), nil
+	return strconv.Itoa(valid)
 }

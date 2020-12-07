@@ -22,21 +22,14 @@ const input = `
 `
 
 func TestD3a(t *testing.T) {
-
-	got, err := d3.D3a(cleared(input))
-	if err != nil {
-		t.Errorf("Got unexpecte error: %v", err)
-	}
+	got := d3.D3a(cleared(input))
 	if got != "7" {
 		t.Errorf("Got %s, expected 7", got)
 	}
 }
 
 func TestD3b(t *testing.T) {
-	got, err := d3.D3b(cleared(input))
-	if err != nil {
-		t.Errorf("Got unexpecte error: %v", err)
-	}
+	got := d3.D3b(cleared(input))
 	if got != "336" {
 		t.Errorf("Got %s, expected 336", got)
 	}

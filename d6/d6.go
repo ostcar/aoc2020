@@ -6,7 +6,7 @@ import (
 )
 
 // D6a solves first part of day6.
-func D6a(input string) (string, error) {
+func D6a(input string) string {
 	input = strings.ReplaceAll(input, "\n\n", "$")
 	input = strings.ReplaceAll(input, "\n", "")
 	data := strings.Split(input, "$")
@@ -23,11 +23,11 @@ func D6a(input string) (string, error) {
 		count += len(set)
 	}
 
-	return strconv.Itoa(count), nil
+	return strconv.Itoa(count)
 }
 
 //D6b solves second part of day6.
-func D6b(input string) (string, error) {
+func D6b(input string) string {
 	data := strings.Split(input[:len(input)-1], "\n\n")
 
 	var count int
@@ -41,6 +41,6 @@ func D6b(input string) (string, error) {
 		}
 	}
 
-	return strconv.Itoa(count), nil
+	return strconv.Itoa(count)
 
 }

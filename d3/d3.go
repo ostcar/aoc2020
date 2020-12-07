@@ -6,14 +6,14 @@ import (
 )
 
 // D3a solves day3 a
-func D3a(input string) (string, error) {
+func D3a(input string) string {
 	p := newPlan(input)
 	trees := p.walk(3, 1)
-	return strconv.Itoa(trees), nil
+	return strconv.Itoa(trees)
 }
 
 // D3b solves day3 b
-func D3b(input string) (string, error) {
+func D3b(input string) string {
 	p := newPlan(input)
 	trees := 1
 	for _, way := range [][2]int{
@@ -25,7 +25,7 @@ func D3b(input string) (string, error) {
 	} {
 		trees = trees * p.walk(way[0], way[1])
 	}
-	return strconv.Itoa(trees), nil
+	return strconv.Itoa(trees)
 }
 
 type plan struct {

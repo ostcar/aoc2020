@@ -24,11 +24,7 @@ a
 b
 `
 
-	got, err := d6.D6b(input)
-	if err != nil {
-		t.Fatalf("Got unexpected error %v", err)
-	}
-
+	got := d6.D6b(input)
 	if got != "6" {
 		t.Errorf("Got `%s`, expected `6`", got)
 	}

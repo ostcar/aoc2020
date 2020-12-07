@@ -8,13 +8,13 @@ import (
 )
 
 // D5a solves the first part of day 5.
-func D5a(input string) (string, error) {
+func D5a(input string) string {
 	codes := parse(input)
-	return strconv.Itoa(decode(codes[len(codes)-1])), nil
+	return strconv.Itoa(decode(codes[len(codes)-1]))
 }
 
 // D5b solves the second part of day 5.
-func D5b(input string) (string, error) {
+func D5b(input string) string {
 	codes := parse(input)
 	exist := make(map[int]bool, len(codes))
 	for _, code := range codes {
@@ -22,10 +22,10 @@ func D5b(input string) (string, error) {
 	}
 	for i := 8; i < 1016; i++ {
 		if !exist[i] && exist[i-1] && exist[i+1] {
-			return strconv.Itoa(i), nil
+			return strconv.Itoa(i)
 		}
 	}
-	return "", fmt.Errorf("no result :(")
+	return fmt.Sprintf("No result :(")
 }
 
 func parse(input string) []string {

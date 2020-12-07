@@ -37,7 +37,7 @@ func parse(input string) map[string]map[string]int {
 }
 
 // D7a solves first part of day 7.
-func D7a(input string) (string, error) {
+func D7a(input string) string {
 	bags := parse(input)
 	contained := make(map[string][]string, len(bags))
 	for name, contain := range bags {
@@ -45,7 +45,7 @@ func D7a(input string) (string, error) {
 			contained[inner] = append(contained[inner], name)
 		}
 	}
-	return strconv.Itoa(len(eventualyContain("shiny gold", contained))), nil
+	return strconv.Itoa(len(eventualyContain("shiny gold", contained)))
 }
 
 func eventualyContain(name string, contained map[string][]string) map[string]bool {
@@ -60,9 +60,9 @@ func eventualyContain(name string, contained map[string][]string) map[string]boo
 }
 
 // D7b solves second part of day 7.
-func D7b(input string) (string, error) {
+func D7b(input string) string {
 	bags := parse(input)
-	return strconv.Itoa(recContain("shiny gold", bags)), nil
+	return strconv.Itoa(recContain("shiny gold", bags))
 }
 
 func recContain(name string, bags map[string]map[string]int) int {

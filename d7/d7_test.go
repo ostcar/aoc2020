@@ -27,17 +27,17 @@ dark violet bags contain no other bags.
 `
 
 func TestD7a(t *testing.T) {
-	if got, _ := d7.D7a(input); got != "4" {
+	if got := d7.D7a(input); got != "4" {
 		t.Errorf("Got %s, expected 4", got)
 	}
 }
 
 func TestD7b(t *testing.T) {
-	if got, _ := d7.D7b(input); got != "32" {
+	if got := d7.D7b(input); got != "32" {
 		t.Errorf("Got %s, expected 32", got)
 	}
 
-	if got, _ := d7.D7b(input2); got != "126" {
+	if got := d7.D7b(input2); got != "126" {
 		t.Errorf("Got %s, expected 126", got)
 	}
 }

@@ -14,20 +14,14 @@ const input = `1721
 1456`
 
 func TestD1a(t *testing.T) {
-	got, err := d1.D1a(input)
-	if err != nil {
-		t.Errorf("Got unexpected error: %v", err)
-	}
+	got := d1.D1a(input)
 	if got != "514579" {
 		t.Errorf("Got %s, expected 514579", got)
 	}
 }
 
 func TestD1b(t *testing.T) {
-	got, err := d1.D1b(input)
-	if err != nil {
-		t.Errorf("Got unexpected error: %v", err)
-	}
+	got := d1.D1b(input)
 	if got != "241861950" {
 		t.Errorf("Got %s, expected 241861950", got)
 	}

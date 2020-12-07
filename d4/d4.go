@@ -8,25 +8,25 @@ import (
 )
 
 // D4a solves first part of day 4.
-func D4a(input string) (string, error) {
+func D4a(input string) string {
 	var c int
 	for _, p := range parse(input) {
 		if validSimple(p) {
 			c++
 		}
 	}
-	return strconv.Itoa(c), nil
+	return strconv.Itoa(c)
 }
 
 // D4b solves second part of day 4.
-func D4b(input string) (string, error) {
+func D4b(input string) string {
 	var c int
 	for _, p := range parse(input) {
 		if validKomplex(p) {
 			c++
 		}
 	}
-	return strconv.Itoa(c), nil
+	return strconv.Itoa(c)
 }
 
 func validSimple(p map[string]string) bool {
