@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"io"
 	"io/ioutil"
 	"log"
 	"os"
@@ -14,14 +13,6 @@ import (
 	"github.com/ostcar/aoc2020/d5"
 	"github.com/ostcar/aoc2020/d6"
 )
-
-func input(day string) (io.ReadCloser, error) {
-	f, err := os.Open(day + ".txt")
-	if err != nil {
-		return nil, fmt.Errorf("can not open file: %w", err)
-	}
-	return f, nil
-}
 
 func assignment(name string) (input string, fn func(string) (string, error), err error) {
 	assignments := map[string]func(string) (string, error){
@@ -45,7 +36,7 @@ func assignment(name string) (input string, fn func(string) (string, error), err
 	}
 
 	day := name[:len(name)-1]
-	file := fmt.Sprintf("%s/%s.txt", day, day)
+	file := fmt.Sprintf("%s/input.txt", day)
 
 	f, err := os.Open(file)
 	if err != nil {
