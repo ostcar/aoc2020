@@ -7,6 +7,7 @@ import (
 	"os"
 
 	"github.com/ostcar/aoc2020/d1"
+	"github.com/ostcar/aoc2020/d10"
 	"github.com/ostcar/aoc2020/d2"
 	"github.com/ostcar/aoc2020/d3"
 	"github.com/ostcar/aoc2020/d4"
@@ -19,24 +20,26 @@ import (
 
 func assignment(name string) (input string, fn func(string) string, err error) {
 	assignments := map[string]func(string) string{
-		"d1a": d1.D1a,
-		"d1b": d1.D1b,
-		"d2a": d2.D2a,
-		"d2b": d2.D2b,
-		"d3a": d3.D3a,
-		"d3b": d3.D3b,
-		"d4a": d4.D4a,
-		"d4b": d4.D4b,
-		"d5a": d5.D5a,
-		"d5b": d5.D5b,
-		"d6a": d6.D6a,
-		"d6b": d6.D6b,
-		"d7a": d7.D7a,
-		"d7b": d7.D7b,
-		"d8a": d8.D8a,
-		"d8b": d8.D8b,
-		"d9a": d9.D9a,
-		"d9b": d9.D9b,
+		"d1a":  d1.D1a,
+		"d1b":  d1.D1b,
+		"d2a":  d2.D2a,
+		"d2b":  d2.D2b,
+		"d3a":  d3.D3a,
+		"d3b":  d3.D3b,
+		"d4a":  d4.D4a,
+		"d4b":  d4.D4b,
+		"d5a":  d5.D5a,
+		"d5b":  d5.D5b,
+		"d6a":  d6.D6a,
+		"d6b":  d6.D6b,
+		"d7a":  d7.D7a,
+		"d7b":  d7.D7b,
+		"d8a":  d8.D8a,
+		"d8b":  d8.D8b,
+		"d9a":  d9.D9a,
+		"d9b":  d9.D9b,
+		"d10a": d10.D10a,
+		"d10b": d10.D10b,
 	}
 
 	fn, ok := assignments[name]
