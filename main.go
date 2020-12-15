@@ -11,6 +11,7 @@ import (
 	"github.com/ostcar/aoc2020/d11"
 	"github.com/ostcar/aoc2020/d12"
 	"github.com/ostcar/aoc2020/d13"
+	"github.com/ostcar/aoc2020/d14"
 	"github.com/ostcar/aoc2020/d2"
 	"github.com/ostcar/aoc2020/d3"
 	"github.com/ostcar/aoc2020/d4"
@@ -49,6 +50,8 @@ func assignment(name string) (input string, fn func(string) string, err error) {
 		"d12b": d12.D12b,
 		"d13a": d13.D13a,
 		"d13b": d13.D13b,
+		"d14a": d14.D14a,
+		"d14b": d14.D14b,
 	}
 
 	fn, ok := assignments[name]
